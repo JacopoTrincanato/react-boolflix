@@ -27,7 +27,8 @@ export default function Searchbar() {
         "LK", "SD", "SR", "SJ", "SE", "CH", "SY", "TW", "TJ", "TZ", "TH", "TL", "TG", "TK", "TO", "TT", "TN", "TR", "TM",
         "TC", "TV", "UG", "UA", "AE", "GB", "US", "UM", "UY", "UZ", "VU", "VE", "VN", "VG", "VI", "WF", "EH", "YE", "ZM",
         "ZW"
-    ]
+    ];
+
 
 
     //creo una costante che filtri il film cercato
@@ -71,11 +72,14 @@ export default function Searchbar() {
                     <li key={index}>
                         <h3>{film.title}</h3>
                         <p>Titolo Originale: {film.original_title}</p>
-                        <p>Lingua: {countryCodes && countryCodes.map((c, index) => {
-                            <div key={index}>
-                                <img src={`https://flagcdn.com/${c}.jpg`} alt={c} />
+                        <p>Lingua: {countryCodes && countryCodes.map((c, index) =>
+                            film.original_language
+                            === c.toLowerCase() && <div key={index}>
+                                <img src={`https://flagcdn.com/${c.toLowerCase()}.png`} width="30" alt={c} />
                             </div>
-                        })}</p>
+
+
+                        )}</p>
                         <p>Voto: {film.vote_average}</p>
                     </li>
                 ))}
