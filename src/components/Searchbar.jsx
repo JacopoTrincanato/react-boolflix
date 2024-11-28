@@ -19,6 +19,8 @@ export default function Searchbar() {
     const [searchText, setSearchText] = useState('')
 
     const { filmsData } = useContext(FilmsContext)
+    console.log(filmsData);
+
 
     //creo una costante che filtri il film cercato
     const [filteredFilm, setFilteredFilm] = useState([])

@@ -17,7 +17,7 @@ export default function FilmsProvider({ children }) {
     }, []);
 
     return (
-        <FilmsContext.Provider value={{ filmsData, setFilmsData }}>
+        <FilmsContext.Provider value={[filmsData, setFilmsData]}>
             {children}
         </FilmsContext.Provider>
     )
