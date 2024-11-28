@@ -6,14 +6,14 @@ import FilmsContext from "./FilmsContext";
 
 //creo il provider
 export default function FilmsProvider({ children }) {
-    const [filmsData, setFilmsData] = useState([]);
+    const [filmsData, setFilmsData] = useState([])
 
     //faccio una chiamata AJAX per caricare i dati
     useEffect(() => {
         fetch("https://api.themoviedb.org/3/search/movie?api_key=bff31b40b387dfa9ed50515734d4b3ce")
             .then((res) => res.json())
             .then((data) => setFilmsData(data))
-            .catch((err) => console.error("Errore nel caricamento dei film:", err));
+            .catch((err) => console.error("Errore nel caricamento dei film:", err))
     }, []);
 
     return (
