@@ -1,17 +1,15 @@
-import { useState } from 'react'
 import './App.css'
 
 //importo FilmsContext
-import FilmsContext from './contexts/FilmsContext'
+import FilmsProvider from './contexts/FilmsProvider'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <FilmsContext.Provider>
+      <FilmsProvider>
 
-      </FilmsContext.Provider>
+      </FilmsProvider>
     </>
   )
 }
