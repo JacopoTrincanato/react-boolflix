@@ -1,18 +1,22 @@
 import './App.css'
 
+import { useState } from 'react'
+
 //importo Searchbar
 import Searchbar from './components/Searchbar'
 
 //importo FilmsContext
-import FilmsProvider from './contexts/FilmsProvider'
+import FilmsContext from './contexts/FilmsContext'
 
 function App() {
 
+  const [filmsData, setFilmsData] = useState([])
+
   return (
     <>
-      <FilmsProvider>
+      <FilmsContext.Provider value={[filmsData, setFilmsData]}>
         <Searchbar></Searchbar>
-      </FilmsProvider>
+      </FilmsContext.Provider>
     </>
   )
 }
