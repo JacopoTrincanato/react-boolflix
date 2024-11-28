@@ -18,7 +18,7 @@ export default function Searchbar() {
 
     const [searchText, setSearchText] = useState('')
 
-    const [filmsData, setFilmsData] = useContext(FilmsContext)
+    const [filmsData] = useContext(FilmsContext)
     console.log(filmsData);
 
 
@@ -34,7 +34,7 @@ export default function Searchbar() {
 
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=bff31b40b387dfa9ed50515734d4b3ce&query=${searchText}`)
             .then((res) => res.json())
-            .then((data) => setFilmsData(data.results))
+            .then((data) => setFilteredFilm(data.results))
             .catch((err) => console.error("Errore nel caricamento dei film:", err))
 
 
