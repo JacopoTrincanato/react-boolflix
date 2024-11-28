@@ -10,9 +10,9 @@ export default function FilmsProvider({ children }) {
 
     //faccio una chiamata AJAX per caricare i dati
     useEffect(() => {
-        fetch("https://api.themoviedb.org/3/search/movie?api_key=bff31b40b387dfa9ed50515734d4b3ce")
+        fetch("https://api.themoviedb.org/3/search/movie?api_key=bff31b40b387dfa9ed50515734d4b3ce&query=")
             .then((res) => res.json())
-            .then((data) => setFilmsData(data))
+            .then((data) => setFilmsData(data.results))
             .catch((err) => console.error("Errore nel caricamento dei film:", err))
     }, []);
 

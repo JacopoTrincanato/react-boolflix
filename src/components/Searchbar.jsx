@@ -18,7 +18,7 @@ export default function Searchbar() {
 
     const [searchText, setSearchText] = useState('')
 
-    const { filmsData } = useContext(FilmsContext)
+    const [filmsData] = useContext(FilmsContext)
     console.log(filmsData);
 
 
@@ -27,7 +27,6 @@ export default function Searchbar() {
     //creo una funzione che permetta di effettuare la ricerca
     function searchFilm(e) {
         e.preventDefault()
-
 
         const filteredFilm = filmsData.filter((film) => film.title.toLowerCase().includes(searchText.toLowerCase()))
 
@@ -48,7 +47,7 @@ export default function Searchbar() {
             </form>
 
             <ul>
-                {filteredFilm.map((film, index) => (
+                {filteredFilm && filteredFilm.map((film, index) => (
                     <li key={index}>
                         <h3>{film.title}</h3>
                         <p>Titolo Originale: {film.original_title}</p>
