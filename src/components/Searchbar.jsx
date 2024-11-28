@@ -10,7 +10,6 @@ export default function Searchbar() {
     const [searchText, setSearchText] = useState('')
 
     const [filmsData] = useContext(FilmsContext)
-    console.log(filmsData);
 
     const countryCodes = [
         "AF", "AX", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH", "BD",
@@ -40,20 +39,27 @@ export default function Searchbar() {
         e.preventDefault()
 
         //faccio una chiamata AJAX per caricare i dati
-
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=bff31b40b387dfa9ed50515734d4b3ce&query=${searchText}`)
+        fetch(`https://api.themoviedb.org/3/search/tv?api_key=bff31b40b387dfa9ed50515734d4b3ce&query=${searchText}`)
             .then((res) => res.json())
             .then((data) => setFilteredFilm(data.results))
             .catch((err) => console.error("Errore nel caricamento dei film:", err))
+
+        /*fetch(`https://api.themoviedb.org/3/search/movie?api_key=bff31b40b387dfa9ed50515734d4b3ce&query=${searchText}`)
+            .then((res) => res.json())
+            .then((data) => setFilteredFilm(data.results))
+            .catch((err) => console.error("Errore nel caricamento dei film:", err))*/
 
 
         const filtered = filmsData.filter((film) => film.title.toLowerCase().includes(searchText.toLowerCase()))
 
         setFilteredFilm(filtered)
 
+
+
     }
 
     console.log(filteredFilm);
+
 
     return (
         <>
@@ -72,14 +78,18 @@ export default function Searchbar() {
                     <li key={index}>
                         <h3>{film.title}</h3>
                         <p>Titolo Originale: {film.original_title}</p>
-                        <p>Lingua: {countryCodes && countryCodes.find((c, index) => {
-                            return (film.original_language
-                                === c.toLowerCase() && <div key={index}>
-                                    <img src={`https://flagcdn.com/${c.toLowerCase()}.png`} width="30" alt={c} />
-                                </div>)
+                        <p>Lingua:
+
+                            {/*se la lingua corrisponde al codice, fai vedere l'immagine */}
+                            {countryCodes && countryCodes.find((c, index) => {
+
+                                return (film.original_language === c.toLowerCase() &&
+                                    <div key={index}>
+                                        <img src={`https://flagcdn.com/${c.toLowerCase()}.png`} width="30" alt={c} />
+                                    </div>)
 
 
-                        })}</p>
+                            })}</p>
                         <p>Voto: {film.vote_average}</p>
                     </li>
                 ))}
