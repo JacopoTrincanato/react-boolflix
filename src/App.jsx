@@ -19,9 +19,11 @@ function App() {
 
   const [filmsData, setFilmsData] = useState([])
 
+  const [tvSeriesData, setTvSeriesData] = useState([])
+
   return (
     <>
-      <FilmsContext.Provider value={[filmsData, setFilmsData]}>
+      <FilmsContext.Provider value={[filmsData, setFilmsData, tvSeriesData, setTvSeriesData]}>
         <Searchbar></Searchbar>
       </FilmsContext.Provider>
     </>
