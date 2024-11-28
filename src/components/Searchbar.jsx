@@ -11,15 +11,15 @@ export default function Searchbar() {
 
     const [filmsData] = useContext(FilmsContext)
 
-
-
     //creo una costante che filtri il film cercato
     const [filteredFilm, setFilteredFilm] = useState([])
 
 
     //creo una funzione che permetta di effettuare la ricerca
-    function searchFilm(e) {
+    function searchField(e) {
         e.preventDefault()
+
+        //creo una costante per l'url dei film e delle serie tv
 
         //faccio una chiamata AJAX per caricare i dati
         /*fetch(`https://api.themoviedb.org/3/search/tv?api_key=bff31b40b387dfa9ed50515734d4b3ce&query=${searchText}`)
@@ -30,7 +30,7 @@ export default function Searchbar() {
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=bff31b40b387dfa9ed50515734d4b3ce&query=${searchText}`)
             .then((res) => res.json())
             .then((data) => setFilteredFilm(data.results))
-            .catch((err) => console.error("Errore nel caricamento dei film:", err))
+            .catch((err) => console.error("Errore nel caricamento:", err))
 
 
         const filtered = filmsData.filter((film) => film.title.toLowerCase().includes(searchText.toLowerCase()))
@@ -46,7 +46,7 @@ export default function Searchbar() {
 
     return (
         <>
-            <form onSubmit={searchFilm}>
+            <form onSubmit={searchField}>
 
                 <input type="search" placeholder="Inserisci il nome del film"
                     value={searchText}
