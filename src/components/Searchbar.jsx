@@ -84,7 +84,7 @@ export default function Searchbar() {
                         <p>Lingua:
                             <img src={`https://flagcdn.com/16x12/${serie.original_language.toLowerCase()}.png`} alt="" />
                         </p>
-                        <p>Voto: {serie.vote_average}</p>
+                        <p>Voto:{Number(serie.vote_average).toFixed()}</p>
                     </li>
                 ))}
             </ul>
