@@ -11,14 +11,14 @@ film trovato:
 
 //importo useState e useContext
 import { useState, useContext } from "react";
-import FilmsProvider from "../contexts/FilmsProvider";
+import FilmsContext from "../contexts/FilmsContext";
 
 //creo il componente Searchbar
 export default function Searchbar() {
 
     const [searchText, setSearchText] = useState('')
 
-    const { filmsData } = useContext(FilmsProvider)
+    const { filmsData } = useContext(FilmsContext)
 
     //creo una costante che filtri il film cercato
     const [filteredFilm, setFilteredFilm] = useState([])
