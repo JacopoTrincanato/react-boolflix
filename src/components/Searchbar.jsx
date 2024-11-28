@@ -47,7 +47,9 @@ export default function Searchbar() {
 
     }
 
-    //console.log(filteredFilm);
+    console.log(filteredFilm);
+    console.log(filteredTvSeries);
+
 
 
     return (
@@ -74,10 +76,7 @@ export default function Searchbar() {
                         <p>Voto: {film.vote_average}</p>
                     </li>
                 ))}
-            </ul>
 
-            <ul>
-                {/*per le serie tv al posto di title e original title metti name e original name */}
                 {filteredTvSeries && filteredTvSeries.map((serie, index) => (
                     <li key={index}>
                         <h3>{serie.name}</h3>
@@ -88,6 +87,20 @@ export default function Searchbar() {
                         <p>Voto: {serie.vote_average}</p>
                     </li>
                 ))}
+            </ul>
+
+            <ul>
+                {/*per le serie tv al posto di title e original title metti name e original name */}
+                {/*filteredTvSeries && filteredTvSeries.map((serie, index) => (
+                    <li key={index}>
+                        <h3>{serie.name}</h3>
+                        <p>Titolo Originale: {serie.original_name}</p>
+                        <p>Lingua:
+                            <img src={`https://flagcdn.com/16x12/${serie.original_language.toLowerCase()}.png`} alt="" />
+                        </p>
+                        <p>Voto: {serie.vote_average}</p>
+                    </li>
+                ))*/}
             </ul>
         </>
     )
