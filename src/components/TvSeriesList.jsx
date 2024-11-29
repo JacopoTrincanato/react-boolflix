@@ -14,8 +14,15 @@ export default function TvSeriesList() {
             {/*per le serie tv al posto di title e original title metti name e original name */}
             {tvSeriesData && tvSeriesData.map((serie, index) => (
                 <li key={index}>
-                    <img src={`https://image.tmdb.org/t/p/w342${serie.poster_path
-                        }`} alt="" />
+                    {serie.poster_path ? (
+                        <img
+                            src={`https://image.tmdb.org/t/p/w342${serie.poster_path}`}
+                            alt={`${serie.name} poster`}
+                        />
+                    ) : (
+                        <p>Immagine non disponibile</p>
+                    )}
+
                     <h3>{serie.name}</h3>
                     <p>Nome Originale: {serie.original_name}</p>
                     <p>Lingua:

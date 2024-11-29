@@ -14,8 +14,14 @@ export default function FilmList() {
 
             {filmsData && filmsData.map((film, index) => (
                 <li key={index}>
-                    <img src={`https://image.tmdb.org/t/p/w342${film.poster_path
-                        }`} alt="" />
+                    {film.poster_path ? (
+                        <img
+                            src={`https://image.tmdb.org/t/p/w342${film.poster_path}`}
+                            alt={`${film.title} poster`}
+                        />
+                    ) : (
+                        <p>Immagine non disponibile</p>
+                    )}
                     <h3>{film.title}</h3>
                     <p>Titolo Originale: {film.original_title}</p>
                     <p>Lingua:
