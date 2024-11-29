@@ -25,7 +25,7 @@ export default function TvSeriesList() {
                     )}
 
                     <h3>{serie.name}</h3>
-                    <p>Nome Originale: {serie.original_name}
+                    <p>Titolo Originale: {serie.original_name}
                     </p>
                     <p>Lingua:
 

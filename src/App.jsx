@@ -2,8 +2,8 @@ import './App.css'
 
 import { useState } from 'react'
 
-//importo Searchbar
-import Searchbar from './components/Searchbar'
+//importo AppHeader
+import AppHeader from './components/Appheader'
 
 //importo FilmsContext
 import FilmsContext from './contexts/FilmsContext'
@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <FilmsContext.Provider value={{ filmsData, setFilmsData, tvSeriesData, setTvSeriesData }}>
-        <Searchbar></Searchbar>
+        <AppHeader></AppHeader>
         <FilmList></FilmList>
         <TvSeriesList></TvSeriesList>
       </FilmsContext.Provider>
