@@ -11,13 +11,6 @@ export default function Searchbar() {
 
     const [filmsData, setFilmsData, tvSeriesData, setTvSeriesData] = useContext(FilmsContext)
 
-    //creo una costante che filtri il film cercato
-    //const [filteredFilm, setFilteredFilm] = useState([])
-
-    //creo una costante che filtri la serie cercata
-    //const [filteredTvSeries, setFilteredTvSeries] = useState([])
-
-
     //creo una funzione che permetta di effettuare la ricerca
     function searchField(e) {
         e.preventDefault()
@@ -28,25 +21,15 @@ export default function Searchbar() {
             .then((data) => setFilmsData(data.results))
             .catch((err) => console.error("Errore nel caricamento:", err))
 
-        //const filteredFilm = filmsData.filter((film) => film.title.toLowerCase().includes(searchText.toLowerCase()))
-
-        //setFilteredFilm(filteredFilm)
-
         fetch(`https://api.themoviedb.org/3/search/tv?api_key=bff31b40b387dfa9ed50515734d4b3ce&query=${searchText}`)
             .then((res) => res.json())
             .then((data) => setTvSeriesData(data.results))
             .catch((err) => console.error("Errore nel caricamento:", err))
 
-        //const filteredTvSeries = tvSeriesData.filter((serie) => serie.name.toLowerCase().includes(searchText.toLowerCase()))
-
-        //setFilteredTvSeries(filteredTvSeries)
-
     }
 
     console.log(filmsData);
     console.log(tvSeriesData);
-
-
 
     return (
         <>
