@@ -7,7 +7,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 export default function FilmList() {
 
-    const [filmsData] = useContext(FilmsContext)
+    const { filmsData } = useContext(FilmsContext)
 
     return (
         <ul>

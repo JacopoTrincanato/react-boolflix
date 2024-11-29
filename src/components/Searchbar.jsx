@@ -9,7 +9,7 @@ export default function Searchbar() {
 
     const [searchText, setSearchText] = useState('')
 
-    const [filmsData, setFilmsData, tvSeriesData, setTvSeriesData] = useContext(FilmsContext)
+    const { filmsData, setFilmsData, tvSeriesData, setTvSeriesData } = useContext(FilmsContext)
 
     //creo una funzione che permetta di effettuare la ricerca
     function searchField(e) {
@@ -40,7 +40,6 @@ export default function Searchbar() {
                     onChange={(e) => setSearchText(e.target.value)}
                 />
 
-                <button>Cerca</button>
             </form>
 
         </>

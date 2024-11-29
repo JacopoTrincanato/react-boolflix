@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-      <FilmsContext.Provider value={[filmsData, setFilmsData, tvSeriesData, setTvSeriesData]}>
+      <FilmsContext.Provider value={{ filmsData, setFilmsData, tvSeriesData, setTvSeriesData }}>
         <Searchbar></Searchbar>
         <FilmList></FilmList>
         <TvSeriesList></TvSeriesList>

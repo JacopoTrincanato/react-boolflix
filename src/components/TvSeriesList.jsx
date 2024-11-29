@@ -7,7 +7,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 export default function TvSeriesList() {
 
-    const [tvSeriesData] = useContext(FilmsContext)
+    const { tvSeriesData } = useContext(FilmsContext)
+    console.log(tvSeriesData);
 
     return (
         <ul>
@@ -24,7 +25,8 @@ export default function TvSeriesList() {
                     )}
 
                     <h3>{serie.name}</h3>
-                    <p>Nome Originale: {serie.original_name}</p>
+                    <p>Nome Originale: {serie.original_name}
+                    </p>
                     <p>Lingua:
 
                         <img
