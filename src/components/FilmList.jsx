@@ -19,7 +19,7 @@ export default function FilmList() {
                     <h3>{film.title}</h3>
                     <p>Titolo Originale: {film.original_title}</p>
                     <p>Lingua:
-                        {<img src={`https://flagcdn.com/16x12/${film.original_language.toLowerCase()}.png`} alt="" /> || film.original_language.toLowerCase()}
+                        <img src={`https://flagcdn.com/16x12/${film.original_language.toLowerCase()}.png`} alt={film.original_language} />
                     </p>
                     <p>
                         Voto: {Math.ceil(film.vote_average / 2) > 0 ? Array.from({ length: Math.ceil(film.vote_average / 2) }).map(() => <FontAwesomeIcon icon={faStar} className="star-rating" />) : Math.ceil(film.vote_average / 2)}
