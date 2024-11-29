@@ -11,12 +11,12 @@ export default function TvSeriesList() {
     console.log(tvSeriesData);
 
     return (
-        <ul>
+        <ul className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
             {/*per le serie tv al posto di title e original title metti name e original name */}
             {tvSeriesData && tvSeriesData.map((serie, index) => (
                 <li key={index}>
                     {serie.poster_path ? (
-                        <img
+                        <img className="bordered-img"
                             src={`https://image.tmdb.org/t/p/w342${serie.poster_path}`}
                             alt={`${serie.name} poster`}
                         />

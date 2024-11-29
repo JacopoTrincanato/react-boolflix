@@ -15,14 +15,57 @@ header {
     padding: 1.5rem;
     background-color: black;
 
-    .logo img,
-    input[type="search"] {
+    .logo img {
         width: 200px;
     }
 
     input[type="search"] {
         width: 250px;
         padding: 0.5rem;
+    }
+}
+
+main {
+    background-color: gray;
+
+    .album {
+        position: relative;
+        display: inline-block;
+        width: fit-content;
+    }
+
+    .bordered-img {
+        border: 2px solid white;
+        display: block;
+    }
+
+    .layover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0;
+        object-fit: contain;
+        border: 2px solid white;
+    }
+
+    .img-content {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+
+        color: white;
+        display: none;
+    }
+
+    .album:hover .img-content {
+        display: block;
+    }
+
+    .album:hover .layover {
+        opacity: 1;
     }
 }
 
