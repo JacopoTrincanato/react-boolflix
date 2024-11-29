@@ -12,7 +12,7 @@ export default function FilmList() {
     return (
         <>
             <h2 className="text-center py-4">LISTA DEI FILM</h2>
-            <ul className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+            <ul className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
 
                 {filmsData && filmsData.map((film, index) => (
                     <li key={index}>
@@ -23,11 +23,11 @@ export default function FilmList() {
                             {film.poster_path ? (
                                 <img className="bordered-img"
                                     src={`https://image.tmdb.org/t/p/w342${film.poster_path}`}
-                                    alt={`${film.title} poster`}
+                                    alt={film.title}
 
                                 />
                             ) : (
-                                <p>Immagine non disponibile</p>
+                                <p className="noImage">Immagine non disponibile</p>
                             )}
 
                             <div className="img-content">

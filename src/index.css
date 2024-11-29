@@ -8,6 +8,14 @@ img {
     max-width: 100%;
 }
 
+ul {
+    list-style: none;
+}
+
+strong {
+    margin-right: 0.5rem;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -35,12 +43,13 @@ main {
     }
 
     .bordered-img {
-        height: 700px;
-        width: 400px;
+        height: 720px;
+        width: 420px;
     }
 
     .bordered-img,
-    .layover {
+    .layover,
+    .noImage {
         border: 2px solid white;
     }
 
@@ -76,6 +85,7 @@ main {
     color: #FFD700;
 }
 
-ul {
-    list-style: none;
+.noImage {
+    height: 720px;
+    width: 420px;
 }

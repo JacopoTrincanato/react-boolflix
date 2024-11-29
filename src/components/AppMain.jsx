@@ -12,7 +12,6 @@ export default function AppMain() {
 
                 <FilmList />
 
-                <h2 className="text-center py-4">LISTA DELLE SERIE TV</h2>
                 <TvSeriesList />
 
 

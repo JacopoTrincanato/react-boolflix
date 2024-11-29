@@ -11,37 +11,49 @@ export default function TvSeriesList() {
     console.log(tvSeriesData);
 
     return (
-        <ul className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-            {/*per le serie tv al posto di title e original title metti name e original name */}
-            {tvSeriesData && tvSeriesData.map((serie, index) => (
-                <li key={index}>
-                    {serie.poster_path ? (
-                        <img className="bordered-img"
-                            src={`https://image.tmdb.org/t/p/w342${serie.poster_path}`}
-                            alt={`${serie.name} poster`}
-                        />
-                    ) : (
-                        <p>Immagine non disponibile</p>
-                    )}
+        <>
+            <h2 className="text-center py-4">LISTA DELLE SERIE TV</h2>
+            <ul className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
 
-                    <h3>{serie.name}</h3>
-                    <p>Titolo Originale: {serie.original_name}
-                    </p>
-                    <p>Lingua:
+                {tvSeriesData && tvSeriesData.map((serie, index) => (
+                    <li key={index}>
 
-                        <img
-                            src={`https://flagcdn.com/16x12/${serie.original_language.toLowerCase()}.png`}
-                            alt={serie.original_language}
-                        />
+                        <div className="album">
+                            <div className="layover"></div>
+
+                            {serie.poster_path ? (
+                                <img className="bordered-img"
+                                    src={`https://image.tmdb.org/t/p/w342${serie.poster_path}`}
+                                    alt={serie.name}
+
+                                />
+                            ) : (
+                                <p className="noImage">Immagine non disponibile</p>
+                            )}
+
+                            <div className="img-content">
+                                <strong>{serie.name}</strong>
+                                <p><strong>Titolo Originale:</strong> {serie.original_name}</p>
+                                <p><strong>Lingua:</strong>
+                                    <img src={`https://flagcdn.com/16x12/${serie.original_language.toLowerCase()}.png`} alt={serie.original_language} />
+                                </p>
+                                <p>
+                                    <strong>Voto:</strong> {Math.ceil(serie.vote_average / 2) > 0 ? Array.from({ length: Math.ceil(serie.vote_average / 2) }).map(() => <FontAwesomeIcon icon={faStar} className="star-rating" />) : Math.ceil(serie.vote_average / 2)}
+                                </p>
+
+                                <p>
+                                    <strong>Overview:</strong>
+                                    {serie.overview}
+                                </p>
+                            </div>
+                        </div>
 
 
 
-                    </p>
-                    <p>
-                        Voto: {Math.ceil(serie.vote_average / 2) > 0 ? Array.from({ length: Math.ceil(serie.vote_average / 2) }).map(() => <FontAwesomeIcon icon={faStar} className="star-rating" />) : Math.ceil(serie.vote_average / 2)}
-                    </p>
-                </li>
-            ))}
-        </ul>
+                    </li>
+                ))}
+
+            </ul>
+        </>
     )
 }
