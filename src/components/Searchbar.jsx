@@ -73,7 +73,7 @@ export default function Searchbar() {
                         <p>Lingua:
                             {<img src={`https://flagcdn.com/16x12/${film.original_language.toLowerCase()}.png`} alt="" /> || film.original_language.toLowerCase()}
                         </p>
-                        <p>Voto: {Math.ceil(film.vote_average.toFixed())}</p>
+                        <p>Voto: {Math.ceil(film.vote_average / 2)}</p>
                     </li>
                 ))}
 
