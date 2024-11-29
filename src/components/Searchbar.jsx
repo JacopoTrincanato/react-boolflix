@@ -71,9 +71,9 @@ export default function Searchbar() {
                         <h3>{film.title}</h3>
                         <p>Titolo Originale: {film.original_title}</p>
                         <p>Lingua:
-                            <img src={`https://flagcdn.com/16x12/${film.original_language.toLowerCase()}.png`} alt="" />
+                            {<img src={`https://flagcdn.com/16x12/${film.original_language.toLowerCase()}.png`} alt="" /> || film.original_language.toLowerCase()}
                         </p>
-                        <p>Voto: {film.vote_average}</p>
+                        <p>Voto: {Math.ceil(film.vote_average.toFixed())}</p>
                     </li>
                 ))}
 
@@ -82,7 +82,7 @@ export default function Searchbar() {
                         <h3>{serie.name}</h3>
                         <p>Titolo Originale: {serie.original_name}</p>
                         <p>Lingua:
-                            <img src={`https://flagcdn.com/16x12/${serie.original_language.toLowerCase()}.png`} alt="" />
+                            {<img src={`https://flagcdn.com/16x12/${serie.original_language.toLowerCase()}.png`} alt="" />}
                         </p>
                         <p>Voto:{Math.ceil(serie.vote_average.toFixed(1))}</p>
                     </li>
