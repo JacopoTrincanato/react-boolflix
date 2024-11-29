@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import FilmsContext from "../contexts/FilmsContext";
 
-export default function tvSeriesList() {
+export default function TvSeriesList() {
 
     const [tvSeriesData] = useContext(FilmsContext)
 

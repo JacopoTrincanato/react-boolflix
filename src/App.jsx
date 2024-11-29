@@ -14,6 +14,8 @@ import Searchbar from './components/Searchbar'
 
 //importo FilmsContext
 import FilmsContext from './contexts/FilmsContext'
+import FilmList from './components/FilmList'
+import TvSeriesList from './components/TvSeriesList'
 
 function App() {
 
@@ -25,6 +27,8 @@ function App() {
     <>
       <FilmsContext.Provider value={[filmsData, setFilmsData, tvSeriesData, setTvSeriesData]}>
         <Searchbar></Searchbar>
+        <FilmList></FilmList>
+        <TvSeriesList></TvSeriesList>
       </FilmsContext.Provider>
     </>
   )
