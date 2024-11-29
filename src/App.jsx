@@ -27,12 +27,9 @@ function App() {
 
   const [tvSeriesData, setTvSeriesData] = useState([])
 
-  //creo una costante con la parte dell'url iniziale dell'immagine
-  const imageInitialUrl = 'https://image.tmdb.org/t/p/w342'
-
   return (
     <>
-      <FilmsContext.Provider value={[filmsData, setFilmsData, tvSeriesData, setTvSeriesData, imageInitialUrl]}>
+      <FilmsContext.Provider value={[filmsData, setFilmsData, tvSeriesData, setTvSeriesData]}>
         <Searchbar></Searchbar>
         <FilmList></FilmList>
         <TvSeriesList></TvSeriesList>

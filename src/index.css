@@ -1,3 +1,7 @@
 .star-rating {
     color: #FFD700;
 }
+
+ul {
+    list-style: none;
+}
