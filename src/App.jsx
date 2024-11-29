@@ -5,10 +5,11 @@ import { useState } from 'react'
 //importo AppHeader
 import AppHeader from './components/Appheader'
 
+//importo AppMain
+import AppMain from './components/AppMain'
+
 //importo FilmsContext
 import FilmsContext from './contexts/FilmsContext'
-import FilmList from './components/FilmList'
-import TvSeriesList from './components/TvSeriesList'
 
 /*Milestone 4:
 Trasformiamo quello che abbiamo fatto fino ad ora in una vera e propria webapp,
@@ -31,8 +32,7 @@ function App() {
     <>
       <FilmsContext.Provider value={{ filmsData, setFilmsData, tvSeriesData, setTvSeriesData }}>
         <AppHeader></AppHeader>
-        <FilmList></FilmList>
-        <TvSeriesList></TvSeriesList>
+        <AppMain></AppMain>
       </FilmsContext.Provider>
     </>
   )
