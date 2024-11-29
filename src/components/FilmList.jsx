@@ -10,37 +10,50 @@ export default function FilmList() {
     const { filmsData } = useContext(FilmsContext)
 
     return (
-        <ul className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2">
+        <>
+            <h2 className="text-center py-4">LISTA DEI FILM</h2>
+            <ul className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
 
-            {filmsData && filmsData.map((film, index) => (
-                <li key={index} className="album">
+                {filmsData && filmsData.map((film, index) => (
+                    <li key={index}>
 
-                    <div className="layover"></div>
+                        <div className="album">
+                            <div className="layover"></div>
 
-                    {film.poster_path ? (
-                        <img className="bordered-img"
-                            src={`https://image.tmdb.org/t/p/w342${film.poster_path}`}
-                            alt={`${film.title} poster`}
+                            {film.poster_path ? (
+                                <img className="bordered-img"
+                                    src={`https://image.tmdb.org/t/p/w342${film.poster_path}`}
+                                    alt={`${film.title} poster`}
 
-                        />
-                    ) : (
-                        <p>Immagine non disponibile</p>
-                    )}
+                                />
+                            ) : (
+                                <p>Immagine non disponibile</p>
+                            )}
 
-                    <div className="img-content">
-                        <h3>{film.title}</h3>
-                        <p>Titolo Originale: {film.original_title}</p>
-                        <p>Lingua:
-                            <img src={`https://flagcdn.com/16x12/${film.original_language.toLowerCase()}.png`} alt={film.original_language} />
-                        </p>
-                        <p>
-                            Voto: {Math.ceil(film.vote_average / 2) > 0 ? Array.from({ length: Math.ceil(film.vote_average / 2) }).map(() => <FontAwesomeIcon icon={faStar} className="star-rating" />) : Math.ceil(film.vote_average / 2)}
-                        </p>
-                    </div>
+                            <div className="img-content">
+                                <strong>{film.title}</strong>
+                                <p><strong>Titolo Originale:</strong> {film.original_title}</p>
+                                <p><strong>Lingua:</strong>
+                                    <img src={`https://flagcdn.com/16x12/${film.original_language.toLowerCase()}.png`} alt={film.original_language} />
+                                </p>
+                                <p>
+                                    <strong>Voto:</strong> {Math.ceil(film.vote_average / 2) > 0 ? Array.from({ length: Math.ceil(film.vote_average / 2) }).map(() => <FontAwesomeIcon icon={faStar} className="star-rating" />) : Math.ceil(film.vote_average / 2)}
+                                </p>
 
-                </li>
-            ))}
+                                <p>
+                                    <strong>Overview:</strong>
+                                    {film.overview}
+                                </p>
+                            </div>
+                        </div>
 
-        </ul>
+
+
+                    </li>
+                ))}
+
+            </ul>
+        </>
+
     )
 }

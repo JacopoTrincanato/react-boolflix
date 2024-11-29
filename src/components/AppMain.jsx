@@ -10,8 +10,6 @@ export default function AppMain() {
         <main>
             <div className="container align-items-center">
 
-                <h2 className="text-center py-4">LISTA DEI FILM</h2>
-
                 <FilmList />
 
                 <h2 className="text-center py-4">LISTA DELLE SERIE TV</h2>

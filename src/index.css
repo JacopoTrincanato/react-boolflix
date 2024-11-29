@@ -27,16 +27,21 @@ header {
 
 main {
     background-color: gray;
+    min-height: 100vh;
 
     .album {
         position: relative;
-        display: inline-block;
         width: fit-content;
     }
 
     .bordered-img {
+        height: 700px;
+        width: 400px;
+    }
+
+    .bordered-img,
+    .layover {
         border: 2px solid white;
-        display: block;
     }
 
     .layover {
@@ -47,15 +52,13 @@ main {
         height: 100%;
         background-color: black;
         opacity: 0;
-        object-fit: contain;
-        border: 2px solid white;
     }
 
     .img-content {
         position: absolute;
-        top: 10%;
-        left: 10%;
-
+        top: 5%;
+        left: 5%;
+        right: 5%;
         color: white;
         display: none;
     }
