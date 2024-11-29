@@ -1,6 +1,10 @@
 import { useContext } from "react";
 import FilmsContext from "../contexts/FilmsContext";
 
+//importo le icone di fontAwesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
 export default function FilmList() {
 
     const [filmsData] = useContext(FilmsContext)
@@ -17,7 +21,9 @@ export default function FilmList() {
                     <p>Lingua:
                         {<img src={`https://flagcdn.com/16x12/${film.original_language.toLowerCase()}.png`} alt="" /> || film.original_language.toLowerCase()}
                     </p>
-                    <p>Voto: {Math.ceil(film.vote_average / 2)}</p>
+                    <p>
+                        Voto: {Array.from({ length: Math.ceil(film.vote_average / 2) }).map(() => <FontAwesomeIcon icon={faStar} className="star-rating" />)}
+                    </p>
                 </li>
             ))}
 
