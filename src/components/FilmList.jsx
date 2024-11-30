@@ -30,7 +30,7 @@ export default function FilmList() {
                                 <p className="noImage">Immagine non disponibile</p>
                             )}
 
-                            <div className="img-content">
+                            <div className="img-content text-white d-none">
                                 <strong>{film.title}</strong>
                                 <p><strong>Titolo Originale:</strong> {film.original_title}</p>
                                 <p><strong>Lingua:</strong>

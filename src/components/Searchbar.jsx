@@ -35,7 +35,7 @@ export default function Searchbar() {
         <>
             <form onSubmit={searchField}>
 
-                <input type="search" placeholder="Inserisci il titolo"
+                <input type="search" placeholder="Inserisci il titolo" className="p-1"
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value)}
                 />

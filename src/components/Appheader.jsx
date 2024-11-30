@@ -6,7 +6,7 @@ export default function AppHeader() {
 
     //eseguo il return
     return (
-        <header>
+        <header className="justify-content-between align-items-center p-3 d-flex">
             <div className="logo">
                 <img src="../img/logo-boolflix.png" alt="" />
             </div>

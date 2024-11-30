@@ -17,11 +17,8 @@ strong {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
     background-color: black;
+    z-index: 1000;
 
     .logo img {
         width: 200px;
@@ -29,13 +26,11 @@ header {
 
     input[type="search"] {
         width: 250px;
-        padding: 0.5rem;
     }
 }
 
 main {
     background-color: gray;
-    padding: 2rem 0;
     min-height: 100vh;
 
     .album {
@@ -43,9 +38,10 @@ main {
         width: fit-content;
     }
 
-    .bordered-img {
-        height: 720px;
-        width: 420px;
+    .bordered-img,
+    .noImage {
+        height: 500px;
+        width: 350px;
     }
 
     .bordered-img,
@@ -69,8 +65,7 @@ main {
         top: 5%;
         left: 5%;
         right: 5%;
-        color: white;
-        display: none;
+        overflow-y: hidden;
     }
 
     .album:hover .img-content {
@@ -84,9 +79,4 @@ main {
 
 .star-rating {
     color: #FFD700;
-}
-
-.noImage {
-    height: 720px;
-    width: 420px;
 }

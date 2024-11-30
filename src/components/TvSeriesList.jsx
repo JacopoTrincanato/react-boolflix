@@ -31,7 +31,7 @@ export default function TvSeriesList() {
                                 <p className="noImage">Immagine non disponibile</p>
                             )}
 
-                            <div className="img-content">
+                            <div className="img-content text-white d-none">
                                 <strong>{serie.name}</strong>
                                 <p><strong>Titolo Originale:</strong> {serie.original_name}</p>
                                 <p><strong>Lingua:</strong>
