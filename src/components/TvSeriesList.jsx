@@ -31,7 +31,7 @@ export default function TvSeriesList() {
                                 <p className="noImage">Immagine non disponibile</p>
                             )}
 
-                            <div className="img-content text-white d-none">
+                            <div className="img-content">
                                 <strong>{serie.name}</strong>
                                 <p><strong>Titolo Originale:</strong> {serie.original_name}</p>
                                 <p><strong>Lingua:</strong>
@@ -43,7 +43,7 @@ export default function TvSeriesList() {
 
                                 <p>
                                     <strong>Overview:</strong>
-                                    {serie.overview}
+                                    {serie.overview === "" ? 'Overview non disponibile' : serie.overview}
                                 </p>
                             </div>
                         </div>

@@ -30,11 +30,11 @@ export default function FilmList() {
                                 <p className="noImage">Immagine non disponibile</p>
                             )}
 
-                            <div className="img-content text-white d-none">
+                            <div className="img-content">
                                 <strong>{film.title}</strong>
                                 <p><strong>Titolo Originale:</strong> {film.original_title}</p>
                                 <p><strong>Lingua:</strong>
-                                    <img src={`https://flagcdn.com/16x12/${film.original_language.toLowerCase()}.png`} alt={film.original_language} />
+                                    {film.original_language === 'en' ? <img src={`https://flagcdn.com/16x12/us.png`} alt={film.original_language} /> : <img src={`https://flagcdn.com/16x12/${film.original_language.toLowerCase()}.png`} alt={film.original_language} />}
                                 </p>
                                 <p>
                                     <strong>Voto:</strong> {Math.ceil(film.vote_average / 2) > 0 ? Array.from({ length: Math.ceil(film.vote_average / 2) }).map(() => <FontAwesomeIcon icon={faStar} className="star-rating" />) : Math.ceil(film.vote_average / 2)}
@@ -42,7 +42,7 @@ export default function FilmList() {
 
                                 <p>
                                     <strong>Overview:</strong>
-                                    {film.overview}
+                                    {film.overview === "" ? 'Overview non disponibile' : film.overview}
                                 </p>
                             </div>
                         </div>

@@ -18,7 +18,8 @@ strong {
 
 header {
     background-color: black;
-    z-index: 1000;
+    z-index: 10000;
+    position: relative;
 
     .logo img {
         width: 200px;
@@ -65,7 +66,9 @@ main {
         top: 5%;
         left: 5%;
         right: 5%;
-        overflow-y: hidden;
+        overflow: auto;
+        color: white;
+        display: none;
     }
 
     .album:hover .img-content {
