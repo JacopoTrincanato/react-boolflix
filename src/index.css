@@ -20,6 +20,10 @@ header {
     background-color: black;
     z-index: 10000;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
 
     .logo img {
         width: 200px;
@@ -31,7 +35,9 @@ header {
 }
 
 main {
+    position: relative;
     background-color: gray;
+    z-index: 1000;
     min-height: 100vh;
 
     .album {
@@ -82,4 +88,24 @@ main {
 
 .star-rating {
     color: #FFD700;
+}
+
+.noImage {
+    background-color: black;
+    color: white;
+    position: relative;
+
+    p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.noImage:hover {
+    p {
+        display: none;
+        color: black;
+    }
 }

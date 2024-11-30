@@ -28,7 +28,9 @@ export default function TvSeriesList() {
 
                                 />
                             ) : (
-                                <p className="noImage">Immagine non disponibile</p>
+                                <div className="noImage">
+                                    <p>Immagine non disponibile</p>
+                                </div>
                             )}
 
                             <div className="img-content">
