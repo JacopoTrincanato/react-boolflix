@@ -12,7 +12,6 @@ export default function TvSeriesList() {
 
     return (
         <>
-            <h2 className="text-center py-4">LISTA DELLE SERIE TV</h2>
             <ul className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
 
                 {tvSeriesData && tvSeriesData.map((serie, index) => (
@@ -37,7 +36,7 @@ export default function TvSeriesList() {
                                 <strong>{serie.name}</strong>
                                 <p><strong>Titolo Originale:</strong> {serie.original_name}</p>
                                 <p><strong>Lingua:</strong>
-                                    <img src={`https://flagcdn.com/16x12/${serie.original_language.toLowerCase()}.png`} alt={serie.original_language} />
+                                    {serie.original_language === 'en' ? <img src={`https://flagcdn.com/16x12/us.png`} alt={serie.original_language} /> : <img src={`https://flagcdn.com/16x12/${serie.original_language.toLowerCase()}.png`} alt={serie.original_language} />}
                                 </p>
                                 <p>
                                     <strong>Voto:</strong> {Math.ceil(serie.vote_average / 2) > 0 ? Array.from({ length: Math.ceil(serie.vote_average / 2) }).map(() => <FontAwesomeIcon icon={faStar} className="star-rating" />) : Math.ceil(serie.vote_average / 2)}
