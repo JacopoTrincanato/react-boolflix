@@ -7,7 +7,7 @@ export default function AppMain() {
 
     //eseguo il return
     return (
-        <main className="py-4">
+        <main>
             <div className="container align-items-center">
 
                 <FilmList />

@@ -18,12 +18,13 @@ strong {
 
 header {
     background-color: black;
-    z-index: 10000;
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
+    z-index: 10000;
+    position: fixed;
+    width: 100%;
 
     .logo img {
         width: 200px;
@@ -37,8 +38,9 @@ header {
 main {
     position: relative;
     background-color: gray;
-    z-index: 1000;
-    min-height: 100vh;
+    min-height: 90vh;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
 
     .album {
         position: relative;
@@ -72,7 +74,7 @@ main {
         top: 5%;
         left: 5%;
         right: 5%;
-        overflow: auto;
+        overflow: hidden;
         color: white;
         display: none;
     }
