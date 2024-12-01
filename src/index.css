@@ -38,7 +38,7 @@ header {
 main {
     position: relative;
     background-color: gray;
-    min-height: 90vh;
+    min-height: 100vh;
     padding-top: 10rem;
     padding-bottom: 2rem;
 

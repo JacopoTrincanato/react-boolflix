@@ -13,13 +13,15 @@ import FilmsContext from './contexts/FilmsContext'
 
 function App() {
 
+  const api_key = import.meta.env.VITE_MOVIE_DB_API_KEY
+
   const [filmsData, setFilmsData] = useState([])
 
   const [tvSeriesData, setTvSeriesData] = useState([])
 
   return (
     <>
-      <FilmsContext.Provider value={{ filmsData, setFilmsData, tvSeriesData, setTvSeriesData }}>
+      <FilmsContext.Provider value={{ filmsData, setFilmsData, tvSeriesData, setTvSeriesData, api_key }}>
         <AppHeader></AppHeader>
         <AppMain></AppMain>
       </FilmsContext.Provider>
