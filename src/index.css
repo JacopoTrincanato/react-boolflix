@@ -17,7 +17,7 @@ strong {
 }
 
 header {
-    background-color: black;
+    background-color: #33333391;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,7 +37,7 @@ header {
 
 main {
     position: relative;
-    background-color: gray;
+    background-color: black;
     min-height: 100vh;
     padding-top: 10rem;
     padding-bottom: 2rem;
