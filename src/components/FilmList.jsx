@@ -35,6 +35,9 @@ export default function FilmList() {
                                 <strong>{film.title}</strong>
                                 <p><strong>Titolo Originale:</strong> {film.original_title}</p>
                                 <p><strong>Lingua:</strong>
+
+                                    <span>{film.original_language}</span>
+
                                     {film.original_language === 'en' && <img src={`https://flagcdn.com/16x12/us.png`} alt={film.original_language} />}
 
                                     {film.original_language === 'ja' && <img src={`https://flagcdn.com/16x12/jp.png`} alt={film.original_language} />}

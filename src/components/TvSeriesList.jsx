@@ -36,6 +36,9 @@ export default function TvSeriesList() {
                                 <strong>{serie.name}</strong>
                                 <p><strong>Titolo Originale:</strong> {serie.original_name}</p>
                                 <p><strong>Lingua:</strong>
+
+                                    <span>{serie.original_language}</span>
+
                                     {serie.original_language === 'en' && <img src={`https://flagcdn.com/16x12/us.png`} alt={serie.original_language} />}
 
                                     {serie.original_language === 'ja' && <img src={`https://flagcdn.com/16x12/jp.png`} alt={serie.original_language} />}
@@ -43,6 +46,7 @@ export default function TvSeriesList() {
                                     {serie.original_language === 'ko' && <img src={`https://flagcdn.com/16x12/kr.png`} alt={serie.original_language} />}
 
                                     {<img src={`https://flagcdn.com/16x12/${serie.original_language.toLowerCase()}.png`} alt="" />}
+
                                 </p>
                                 <p>
                                     <strong>Voto:</strong> {Math.ceil(serie.vote_average / 2) > 0 ? Array.from({ length: Math.ceil(serie.vote_average / 2) }).map(() => <FontAwesomeIcon icon={faStar} className="star-rating" />) : Math.ceil(serie.vote_average / 2)}

@@ -51,6 +51,7 @@ main {
     .noImage {
         height: 500px;
         width: 350px;
+        overflow: hidden;
     }
 
     .bordered-img,
@@ -74,7 +75,7 @@ main {
         top: 5%;
         left: 5%;
         right: 5%;
-        overflow: hidden;
+        /*overflow: scroll;*/
         color: white;
         display: none;
     }
