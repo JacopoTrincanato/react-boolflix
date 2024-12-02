@@ -75,7 +75,8 @@ main {
         top: 5%;
         left: 5%;
         right: 5%;
-        overflow-y: hidden;
+        overflow-y: scroll;
+        height: 100%;
         color: white;
         display: none;
     }
